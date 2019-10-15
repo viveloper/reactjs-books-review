@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SigninForm.scss';
+import './SigninForm.css';
 
 export default function SigninForm(props) {
   const [email, setEmail] = useState('');
@@ -47,24 +47,24 @@ export default function SigninForm(props) {
 
   return (
     <div className="SigninForm">
-      <header className="Header">log in. start searching.</header>
+      <header>log in. start searching.</header>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
-          <input className="TextInput" type="email" name="email" id="email" value={email} onChange={handleChange} />
+          <input className="textInput" type="email" name="email" id="email" value={email} onChange={handleChange} />
         </div>
         <div>
           <label htmlFor="password">Password</label>
-          <input className="TextInput" type="password" name="password" id="password" value={password} onChange={handleChange} />
+          <input className="textInput" type="password" name="password" id="password" value={password} onChange={handleChange} />
         </div>
         <div>
-          <input className="SigninBtn" type="submit" value="SIGN IN" />
+          <input className="singinBtn" type="submit" value="SIGN IN" />
         </div>
       </form>
       <div>
         <hr />
       </div>
-      <footer className="Footer">
+      <footer>
         <div>
           <p>Need to create an account?</p>
           <button>SIGN UP</button>

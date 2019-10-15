@@ -1,0 +1,54 @@
+.Signin {
+  display: flex;
+  width: 800px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.Signin > .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 800px;
+  align-self: center;
+  grid-template-areas: 
+  "header header"
+  "section1 section2";
+}
+
+.Signin > .wrapper > header {
+  grid-area: header;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.Signin > .wrapper > header > .title {
+  font-size: 2em;
+  color: #642828;
+}
+
+.Signin > .wrapper > header > .subTitle {
+  font-size: 1.4em;
+  color: #524949;
+}
+
+.Signin > .wrapper > header > .underline {
+  width: 400px;
+  height: 8px;
+  margin: 20px auto;
+  background: linear-gradient(to right, #803b32, #ddb49b);
+}
+
+.Signin > .wrapper > .section1 {
+  grid-area: section1;
+}
+
+.Signin > .wrapper > .section1 > img {
+  width: 100%;
+}
+
+.Signin > .wrapper > .section2 {
+  grid-area: section2;
+  background-color: #f3f7f8;
+  display: flex;
+}

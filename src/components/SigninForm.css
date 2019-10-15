@@ -1,0 +1,51 @@
+.SigninForm {
+  align-self: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.SigninForm > header {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #524949;
+  margin-bottom: 40px;
+}
+
+.SigninForm > form div,label,input {
+  margin: 10px 0;
+}
+
+.SigninForm > form .textInput {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.SigninForm > form .singinBtn {
+  width: 100px;
+  height: 32px;
+  background-color: rgb(57, 77, 116);
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.SigninForm > footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.SigninForm > footer button {
+  width: 100px;
+  height: 30px;
+  background: none;
+  border-color: rgb(57, 77, 116);
+  color: rgb(57, 77, 116);
+  box-sizing: border-box;
+  cursor: pointer;
+}
