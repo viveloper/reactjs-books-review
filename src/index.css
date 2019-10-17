@@ -1,8 +1,7 @@
+/* Global */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,61 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Signin */
+#signin-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e4e4e4;
+}
+
+#signin-page > .container {
+  width: 800px;
+  background: #d4d4d4;
+}
+
+#signin-header {
+  text-align: center;
+  padding: 15px;
+  text-transform: uppercase;
+  background: coral;
+}
+
+#signin-underline {
+  height: 80px;
+  padding-top: 30px;
+  background: #ddd;
+}
+
+#signin-underline div {
+  width: 400px;
+  height: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  background: linear-gradient(to right, #803b32, #ddb49b);
+}
+
+#signin-page .flex-container {
+  display: flex;
+}
+
+#signin-aside {
+  width: 50%;
+}
+
+#signin-aside img {
+  width: 300px;
+}
+
+#signin-section {
+  width: 50%;
 }
