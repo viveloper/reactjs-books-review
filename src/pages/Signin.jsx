@@ -48,7 +48,7 @@ export default function Signin(props) {
     <div id="signin-page">
       <div className="container">
         <header id="signin-header">
-          <h1>viveloper review service for books</h1>
+          <h1>books review service</h1>
           <h2>please share your opinion on web development books.</h2>
         </header>
 
@@ -72,21 +72,15 @@ export default function Signin(props) {
                 <label htmlFor="password">Password</label>
                 <input className="textInput" type="password" name="password" id="password" value={password} onChange={handleChange} />
               </div>
-              <div>
-                <input className="singinBtn" type="submit" value="SIGN IN" />
+              <div>                
+                <button type="submit">SIGN IN</button>
               </div>
-            </form>
-            <div>
-              <hr />
-            </div>
-            <div>
-              <p>Need to create an account?</p>
-              <button>SIGN UP</button>
-            </div>
-            <div>
-              <p>Forgot your password?</p>
-              <button>RECOVERY</button>
-            </div>
+            </form>            
+            <div className="footer">              
+              <a href="#">sign up</a>
+              <span> | </span>
+              <a href="#">recovery</a>
+            </div>            
           </section>
         </div>
       </div>
