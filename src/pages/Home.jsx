@@ -1,7 +1,15 @@
 import React from 'react';
+import withAuth from '../hoc/withAuth';
 
-export default function Home(props) {
+function Home(props) {
+  console.log(props);
   return (
-    <h2>Home</h2>
+    <div>
+      <h2>Home</h2>
+      <p>token : {props.token}</p>
+    </div>
+
   );
 }
+
+export default withAuth(Home);
