@@ -15,11 +15,11 @@ export default function withAuth(Component) {
   return function NewComponent(props) {
     const token = localStorage.getItem('token');
     console.log(token);
-    if (token === null) {
-      return <Redirect to="/signin" />;
+    if (token) {
+      return <Component {...props} token={token} />;      
     }
     else{
-      return <Component {...props} token={token} />;
+      return <Redirect to="/signin" />;
     }
   };
 }

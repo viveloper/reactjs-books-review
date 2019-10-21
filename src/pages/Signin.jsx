@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SigninForm from '../components/SigninForm';
 
-export default function Signin(props) {
-  const [isLoading, setIsLoading] = useState(false);
-
+export default function Signin(props) {  
   return (
     <div id="signin-page">
       <div className="container">

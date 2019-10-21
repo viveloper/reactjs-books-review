@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
-import {withRouter} from 'react-router-dom';
+import React, { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 
 function SigninForm(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === 'email') {
@@ -17,7 +19,10 @@ function SigninForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    (async () => {
+
+    setIsLoading(true);
+
+    setTimeout(async () => {
       const reqData = {
         email: email,
         password: password
@@ -36,26 +41,24 @@ function SigninForm(props) {
         referrer: 'no-referrer', // no-referrer, *client
         body: JSON.stringify(reqData), // body data type must match "Content-Type" header
       };
-
-      try {
-        const response = await fetch(url, reqOpt);
-        const resData = await response.json();
-
-        console.log(resData);
-
-        if (resData.error) {
-          alert(resData.error);
-        }
-        else {
-          const { token } = resData;
-          localStorage.setItem('token', token);
-          console.log(token);
-          props.history.push('/');
-        }
-      } catch (error) {
-        alert(error);
+  
+      const response = await fetch(url, reqOpt);
+      const resData = await response.json();
+  
+      setIsLoading(false);
+  
+      console.log(resData);
+  
+      if (resData.error) {
+        setMessage(resData.error);
       }
-    })();
+      else {        
+        const { token } = resData;
+        localStorage.setItem('token', token);
+        console.log(token);
+        props.history.push('/');
+      }
+    }, 500);
   }
 
   return (
@@ -68,9 +71,24 @@ function SigninForm(props) {
         <label htmlFor="password">Password</label>
         <input className="textInput" type="password" name="password" id="password" value={password} onChange={handleChange} />
       </div>
+      {
+        message ?
+          <div className="message">
+            <p>{message}</p>
+          </div>
+          : null
+      }
       <div>
         <button type="submit">SIGN IN</button>
       </div>
+      {
+        isLoading ?
+          <>
+            <div className="loading-bg"></div>
+            <img src="/images/loading.gif" alt="loading" />
+          </>
+          : null
+      }
     </form>
   );
 }
