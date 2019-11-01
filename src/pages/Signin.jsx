@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import SigninForm from '../components/SigninForm';
 
 export default function Signin(props) {  

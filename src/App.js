@@ -8,15 +8,15 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/"
-          render={
-            props => {
-              // 토큰이 존재하면 로그인페이지 못가게하기 로직 필요
-              return (<Home {...props} />)
-            }
+        <Route exact path="/" component={Home} />
+        <Route exact path="/signin" render={props => {
+          if(!localStorage.getItem('token')){
+            return <Signin {...props} />          
           }
-        />
-        <Route exact path="/signin" component={Signin} />
+          else{
+            return <Redirect to="/" />
+          }
+        }} />
         <Route component={Error} />
       </Switch>
     </Router>

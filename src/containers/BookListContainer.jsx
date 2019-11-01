@@ -1,20 +1,21 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import BookList from '../components/BookList';
-import { addBooks } from '../actions';
+import { List } from 'immutable';
+import { receiveBooks } from '../actions';
 
-const mapStateToProps = () => {
-  return{
-    books: state.books
-  }
-}
-
-const mapDispatchToProps = () => {
-  return{
-    addBooks: books=>{
-      dispatchEvent(addBooks);
+const mapStateToProps = (state) => {
+    const { books } = state;
+    return {
+        books: List(books).toArray()
     }
-  }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookList)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        receiveBooks: (books) => {
+            dispatch(receiveBooks(books));
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);
