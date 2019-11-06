@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Signin.css';
 import SigninForm from '../components/SigninForm';
 
 export default function Signin(props) {  
   return (
-    <div id="signin-page">
-      <div className="container">
+    <div id="signin">
+      <div className="signin-container">
         <header id="signin-header">
           <h1>books review service</h1>
           <h2>please share your opinion on web development books.</h2>
@@ -15,7 +16,7 @@ export default function Signin(props) {
           <div></div>
         </div>
 
-        <div className="flex-container">
+        <div className="signin-flex-container">
           <aside id="signin-aside">
             <img src="/images/signin-books.jpg" alt="Signin Background" />
           </aside>
@@ -23,7 +24,7 @@ export default function Signin(props) {
           <section id="signin-section">
             <h3>log in. start searching.</h3>
             <SigninForm />
-            <div className="footer">
+            <div className="signin-footer">
               <Link to="/signin">sign up</Link>
               <span> | </span>
               <Link to="/signin">recovery</Link>

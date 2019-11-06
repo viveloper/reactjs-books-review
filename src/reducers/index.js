@@ -1,6 +1,10 @@
 import { combineReducers } from 'redux';
 import books from './books';
+import loading from './loading';
 
-const reducer = combineReducers({ books });
+const rootReducer = combineReducers({ 
+    books,
+    isLoading: loading
+});
 
-export default reducer;
+export default rootReducer;

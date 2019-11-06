@@ -1,55 +1,37 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardActionArea, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
-
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-    margin: 10
-  },
-  media: {
-    height: 140,
-  }
-});
+import { Card, Icon, Avatar } from 'antd';
+const { Meta } = Card;
 
 export default function Book(props) {
-  const { title, message } = props;
+  const { bookId, title, message, deleteBook, token } = props;
 
-  const classes = useStyles();
-
-  const onClickUpdate = () => {
-    alert('clicked update');
+  const onClickEdit = () => {
+    alert('clicked edit');
   }
 
   const onClickDelete = () => {
-    alert('clicked delete');
+    deleteBook(token, bookId);
   }
 
   return (
-    <Card className={classes.card}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
+    <Card
+      style={{ width: 300 }}
+      cover={
+        <img
+          alt="example"
+          src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {message}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions className={classes.actions}>
-        <Button size="small" color="primary" onClick={onClickUpdate}>
-          Update
-        </Button>
-        <Button size="small" color="primary" onClick={onClickDelete}>
-          Delete
-        </Button>
-      </CardActions>
+      }
+      actions={[
+        <Icon type="edit" key="edit" onClick={onClickEdit} />,
+        <Icon type="delete" key="delete" onClick={onClickDelete} />,
+      ]}
+    >
+      <Meta
+        avatar={<Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />}
+        title={title}
+        description={message}
+      />
     </Card>
   );
 }

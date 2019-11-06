@@ -45,17 +45,14 @@ function SigninForm(props) {
       const response = await fetch(url, reqOpt);
       const resData = await response.json();
   
-      setIsLoading(false);
-  
-      console.log(resData);
+      setIsLoading(false);      
   
       if (resData.error) {
         setMessage(resData.error);
       }
       else {        
         const { token } = resData;
-        localStorage.setItem('token', token);
-        console.log(token);
+        localStorage.setItem('token', token);        
         props.history.push('/');
       }
     }, 500);
@@ -83,10 +80,10 @@ function SigninForm(props) {
       </div>
       {
         isLoading ?
-          <>
+          <div className="loading">
             <div className="loading-bg"></div>
-            <img src="/images/loading.gif" alt="loading" />
-          </>
+            <img className="loading-img" src="/images/loading.gif" alt="loading" />
+          </div>
           : null
       }
     </form>

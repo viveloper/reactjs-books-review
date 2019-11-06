@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react';
 import Book from './Book';
-import axios from 'axios';
 import withAuth from '../hoc/withAuth';
+import './BookList.css';
 
 function BookList(props) {
-  const { books, receiveBooks, token } = props;
+  const { books, fetchBooks, token, deleteBook, isLoading } = props;
 
   useEffect(() => {
-    (async () => {
-      const res = await axios.get('https://api.marktube.tv/v1/book', {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      });
-      const books = res.data;
-      receiveBooks(books);
-    })();
-  }, [receiveBooks, token])
+    fetchBooks(token);
+  }, [fetchBooks, token])
 
   return (
     <div>
+      {        
+        books.map((book) => {
+          return (
+            <Book key={book.bookId} {...book} token={token} deleteBook={deleteBook} />
+          )
+        })
+      }
       {
-        books.map((book) => <Book key={book.bookId} {...book} />)
+        isLoading ?
+          <>
+            <div className="loading-bg"></div>
+            <img className="loading-img" src="/images/loading.gif" alt="loading" />
+          </>
+          : null
       }
     </div>
   );

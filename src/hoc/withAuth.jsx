@@ -13,8 +13,7 @@ export default function withAuth(Component) {
   // };
 
   return function NewComponent(props) {
-    const token = localStorage.getItem('token');
-    console.log(token);
+    const token = localStorage.getItem('token');    
     if (token) {
       return <Component {...props} token={token} />;      
     }

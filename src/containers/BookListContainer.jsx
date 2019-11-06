@@ -1,19 +1,22 @@
 import { connect } from 'react-redux';
 import BookList from '../components/BookList';
-import { List } from 'immutable';
-import { receiveBooks } from '../actions';
+import { fetchBooks, deleteBook } from '../actions';
 
 const mapStateToProps = (state) => {
-    const { books } = state;
+    const { books, isLoading } = state;
     return {
-        books: List(books).toArray()
+        books: books.filter(book => book.deletedAt === null),
+        isLoading
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        receiveBooks: (books) => {
-            dispatch(receiveBooks(books));
+        fetchBooks: token => {
+            dispatch(fetchBooks(token));
+        },
+        deleteBook: (token, bookId) => {
+            dispatch(deleteBook(token, bookId));
         }
     }
 }

@@ -1,0 +1,154 @@
+/* Signin */
+#signin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;  
+}
+
+#signin * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#signin a {
+  text-decoration: none;
+  color: #474f8a;
+}
+
+#signin a:hover {
+  color: #a0351a;
+}
+
+#signin button {
+  padding: 10px 15px;
+  border: none;
+  background: #474f8a;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.signin-container {
+  width: 800px;
+}
+
+#signin-header {
+  text-align: center;  
+  padding: 15px;
+  text-transform: uppercase;  
+}
+
+#signin-header h1 {
+  color: #a0351a;
+}
+
+#signin-header h2 {
+  color: #535050
+}
+
+#signin-underline {
+  height: 50px;  
+  padding-top: 10px;
+}
+
+#signin-underline div {
+  width: 400px;
+  height: 8px;
+  margin-right: auto;
+  margin-left: auto;
+  background: linear-gradient(to right, #803b32, #ddb49b);
+}
+
+#signin .signin-flex-container {
+  display: flex;
+  height: 550px;
+  background: #eff5f8;  
+}
+
+#signin-aside {
+  width: 50%;
+}
+
+#signin-aside img {
+  width: 100%;
+  height: 550px;
+}
+
+#signin-section {
+  width: 50%;
+  padding: 40px 40px;
+}
+
+#signin-section div {
+  margin-bottom: 10px;
+}
+
+#signin-section > h3 {
+  font-size: 24px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 40px 0;
+} 
+
+#signin-section label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+#signin-section .textInput {
+  width: 100%;
+  padding: 8px;  
+}
+
+#signin-section form button {
+  width: 100%;
+  border-radius: 0px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+#signin-section form button:hover {
+  background: #5c64a3;
+}
+
+#signin-section form .message {
+  text-align: center;
+  color: rgb(255, 70, 70);
+  font-style: italic;
+}
+
+.signin-footer {
+  text-align: center;
+}
+
+.signin-footer a {  
+  text-transform: capitalize;
+  margin: 0 5px;
+}
+
+.signin-footer button {
+  background: rgb(250, 120, 97);  
+}
+
+#signin-section .loading-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #535050;
+  opacity: 0.5;
+}
+
+#signin-section .loading-img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;  
+  border-radius: 10px;
+  margin: auto;  
+}
